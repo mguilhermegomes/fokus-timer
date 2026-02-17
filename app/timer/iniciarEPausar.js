@@ -2,8 +2,8 @@ import { timerConfig, getTimerStatus, setTimerPaused, setTimerPlaying, setTimerI
 import { habilitarBotao } from "../habilitarDesabilitarBtn.js";
 import { contagemRegressiva } from "./timerControl.js";
 
-const audioPlay = new Audio("/sons/play.wav");
-const audioPause = new Audio("/sons/pause.mp3");
+const audioPlay = new Audio("sons/play.wav");
+const audioPause = new Audio("sons/pause.mp3");
 
 // inicia o timer com setInterval
 export function iniciarTimer(btnRestart) {

@@ -4,7 +4,7 @@ import { redefinirBtnTimer } from "./atualizarERedefinirBtnTimer.js";
 import { pausarTimer } from "./iniciarEPausar.js";
 
 const timer = document.getElementById("timer");
-const audioTimerEsgotado = new Audio("/sons/beep.mp3");
+const audioTimerEsgotado = new Audio("sons/beep.mp3");
 export const btnTimer = document.getElementById("start-pause");
 export const btnTimerRestart = document.getElementById("restart");
 

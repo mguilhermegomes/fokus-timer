@@ -3,9 +3,9 @@ const textoBtnTimer = document.querySelector("#start-pause > span");
 const btnTimerConfig = {
   estado: "play",
   textoPlay: "Começar",
-  iconPlay: "/imagens/play_arrow.png",
+  iconPlay: "imagens/play_arrow.png",
   textoPause: "Pausar",
-  iconPause: "/imagens/pause.png",
+  iconPause: "imagens/pause.png",
   textoContinuar: "Continuar",
 };
 

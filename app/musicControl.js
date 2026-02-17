@@ -1,5 +1,5 @@
 const btnMusic = document.getElementById("alternar-musica");
-const music = new Audio("/sons/luna-rise-part-one.mp3");
+const music = new Audio("sons/luna-rise-part-one.mp3");
 
 music.loop = true;
 
