@@ -110,7 +110,7 @@ app/
 Você pode visualizar e testar o projeto facilmente pelo link:
 
 - **👉 Deploy no GitHub Pages:**
-[Acesse o projeto](https://mguilhermegomes.github.io/code-connect/)
+[Acesse o projeto](https://mguilhermegomes.github.io/fokus-timer/)
 
 ---
 
