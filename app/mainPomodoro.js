@@ -1,16 +1,19 @@
 // funções
-import { controlActiveButton } from "./activeButton.js";
-import alterarContexto from "./contexto/alterarContexto.js";
-import controlMusic from "./musicControl.js";
-import { habilitarBotao, desabilitarBotao } from "./habilitarDesabilitarBtn.js";
-import { iniciarTimer } from "./timer/iniciarEPausar.js";
-import { redefinirTimer, mostrarTempoNaTela } from "./timer/timerControl.js";
-import contextoConfig from "./contexto/contextoConfig.js";
-import { getTimerInterval, setTimerPaused } from "./timer/timerConfig.js";
-import { atualizarBtnTimer, redefinirBtnTimer } from "./timer/atualizarERedefinirBtnTimer.js";
+import { controlActiveButton } from "./pomodoro/activeButton.js";
+import alterarContexto from "./pomodoro/contexto/alterarContexto.js";
+import controlMusic from "./pomodoro/musicControl.js";
+import { habilitarBotao, desabilitarBotao } from "./global/habilitarDesabilitarBtn.js";
+import { iniciarTimer } from "./pomodoro/timer/iniciarEPausar.js";
+import { redefinirTimer, mostrarTempoNaTela } from "./pomodoro/timer/timerControl.js";
+import contextoConfig from "./pomodoro/contexto/contextoConfig.js";
+import { getTimerInterval, setTimerPaused } from "./pomodoro/timer/timerConfig.js";
+import {
+  atualizarBtnTimer,
+  redefinirBtnTimer,
+} from "./pomodoro/timer/atualizarERedefinirBtnTimer.js";
 
 // variáveis
-import { btnTimer, btnTimerRestart, } from "./timer/timerControl.js";
+import { btnTimer, btnTimerRestart } from "./pomodoro/timer/timerControl.js";
 
 // -----------------------------------------------------------------------
 
@@ -36,7 +39,7 @@ btnTimerRestart.addEventListener("click", () => {
   const contexto = btnTimerRestart.getAttribute("data-contexto");
   const config = contextoConfig[contexto];
   if (!config) return;
-  
+
   setTimerPaused();
   redefinirTimer(config.duracao);
   redefinirBtnTimer();

@@ -1,4 +1,4 @@
-const html = document.querySelector("html");
+const html = document.documentElement;
 const imgEstado = document.querySelector(".app__image");
 const tituloEstado = document.querySelector(".app__title").firstChild;
 const tituloDestaqueEstado = document.querySelector(".app__title-strong");

@@ -1,5 +1,5 @@
 import { timerConfig, getTimerStatus, setTimerPaused, setTimerPlaying, setTimerInterval } from "./timerConfig.js";
-import { habilitarBotao } from "../habilitarDesabilitarBtn.js";
+import { habilitarBotao } from "../../global/habilitarDesabilitarBtn.js";
 import { contagemRegressiva } from "./timerControl.js";
 
 const audioPlay = new Audio("sons/play.wav");

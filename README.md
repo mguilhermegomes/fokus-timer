@@ -1,108 +1,29 @@
 ![Fokus](/imagens/logo.png)
 
-# ⏳ Fokus Timer – Pomodoro com JavaScript Modular
+# ⏳ Fokus Timer
+## Pomodoro + Task Manager com JavaScript Moderno (ES Modules)
 
-Este projeto é uma aplicação web de **Timer Pomodoro**, desenvolvida com **JavaScript puro** e organizada de forma modular. A ideia principal foi construir algo funcional e visualmente agradável enquanto eu aprofundava conceitos importantes de arquitetura, organização de código e gerenciamento de estado sem depender de frameworks.
+Aplicação web de produtividade baseada na **Técnica Pomodoro**, combinando **gerenciamento de tarefas** e **arquitetura modular em JavaScript puro (ES6+)**.
 
-Mais do que apenas um timer, o projeto busca simular uma aplicação real, com separação de responsabilidades, escalabilidade e código pensado para manutenção futura.
+O projeto foi desenvolvido com foco em **estrutura escalável, separação de responsabilidades e controle de estado**, simulando a organização de aplicações reais sem uso de frameworks.
 
----
-
-## 🚀 Sobre o Projeto
-
-O Focus Timer permite alternar entre diferentes modos de produtividade, controlar a execução do tempo e acompanhar visualmente o andamento das sessões. Além disso, inclui efeitos sonoros e música ambiente para tornar a experiência mais imersiva.
-
-Durante o desenvolvimento, o foco não foi apenas fazer funcionar, mas estruturar o código de forma que ele pudesse crescer sem virar algo difícil de manter ou entender.
+![MIT License](https://img.shields.io/badge/License-MIT-green)
 
 ---
 
-## 🎯 Funcionalidades
-### 1. Modos de produtividade
+## 📝 Sumário
 
-O usuário pode alternar entre três contextos diferentes:
-
-- 🎯 Foco
-- ☕ Descanso curto
-- 🌴 Descanso longo
-
-Cada modo possui duração própria, imagem temática e mensagens personalizadas que mudam dinamicamente na interface.
-
-### 2. Controle Completo do Timer
-O sistema permite:
-
-- Iniciar contagem regressiva
-- Pausar o tempo
-- Continuar o timer pausado
-- Reiniciar a sessão atual
-- Atualizar automaticamente a interface conforme o estado do timer
-
-### 3. Experiência Sonora
-Para deixar o uso mais agradável, a aplicação possui:
-
-- Música ambiente opcional
-- Som ao iniciar o timer
-- Som ao pausar o timer
-- Alerta sonoro ao finalizar o tempo
-
-### 4. Feedback Visual
-A interface responde às ações do usuário através de:
-
-- Destaque visual do modo ativo
-- Atualização dinâmica de textos e imagens
-- Controle visual de botões habilitados e desabilitados
-
----
-
-## 🧠 O Que Este Projeto Explora
-Este projeto foi uma oportunidade para aprofundar conceitos fundamentais do desenvolvimento front-end moderno, como:
-
-### 1. Modularização com ES Modules
-O código foi dividido em arquivos menores e especializados, facilitando organização, manutenção e reutilização.
-
-### 2. Gerenciamento de Estado
-O estado do timer é controlado por um objeto central que armazena:
-
-- Duração atual
-- Status do timer
-- Intervalo em execução
-
-Isso evita variáveis espalhadas pelo código e deixa o fluxo mais previsível.
-
-### 3. Configuração Baseada em Objetos
-Os diferentes modos do timer são controlados por um único objeto de configuração, permitindo alterar comportamento e interface sem mexer diretamente na lógica da aplicação.
-
-### 4. Separação de Responsabilidades
-Cada módulo tem um papel bem definido, como:
-
-- Controle do timer
-- Atualização da interface
-- Configurações dos contextos
-- Gerenciamento de eventos
-- Controle de botões
-- Controle de áudio
-
----
-
-## 📂 Estrutura do Projeto
-```text
-app/
-│
-├── main.js → Arquivo principal que integra todos os módulos
-├── activeButton.js → Controle visual dos botões de contexto
-├── habilitarDesabilitarBtn.js → Gerenciamento de estados dos botões
-├── musicControl.js → Controle da música ambiente
-│
-├── contexto/
-│   ├── alterarContexto.js → Troca de modos do timer
-│   ├── atualizarInterface.js → Atualização visual do contexto
-│   └── contextoConfig.js → Configurações de cada modo
-│
-├── timer/
-│   ├── iniciarEPausar.js → Controle de execução do timer
-│   ├── timerControl.js → Contagem regressiva e formatação do tempo
-│   ├── timerConfig.js → Estado global do timer
-│   └── atualizarERedefinirBtnTimer.js → Controle visual do botão principal
-```
+- [Sobre o Projeto](#-sobre-o-projeto)
+- [Preview do Projeto](#-preview-do-projeto)
+- [Funcionalidades](#-funcionalidades)
+- [Conceitos e Arquitetura](#-conceitos-e-arquitetura)
+- [Estrutura do Projeto](#-estrutura-do-projeto)
+- [Como Executar o Projeto](#como-executar-o-projeto)
+- [Aprendizados](#-aprendizados)
+- [Melhorias Futuras](#-melhorias-futuras)
+- [Créditos](#-créditos)
+- [Licença](#-licença)
+- [Autor](#-autor)
 
 ---
 
@@ -114,39 +35,211 @@ Você pode visualizar e testar o projeto facilmente pelo link:
 
 ---
 
-## ▶ Como Executar o Projeto
+## 📌 Sobre o Projeto
+
+O **Fokus Timer** integra dois pilares da produtividade:
+- ⏳ Um **Timer Pomodoro** com múltiplos contextos
+- 📝 Um **Gerenciador de Tarefas** sincronizado com o ciclo de foco
+
+Ao finalizar um ciclo de foco, a tarefa ativa pode ser automaticamente marcada como concluída, promovendo uma experiência contínua e orientada a resultado.
+
+O projeto foi construído utilizando apenas **Vanilla JavaScript**, priorizando clareza arquitetural e organização modular.
+
+---
+
+## 👀 Preview do Projeto
+<img src="imagens/fokus-projeto-preview.jpg" alt="Preview do projeto" width="800"/>
+
+---
+
+## ✨ Funcionalidades
+### ⏳ Timer Pomodoro
+- Contagem regressiva
+- Modos de:
+    - Foco
+    - Descanso curto
+    - Descanso longo
+- Iniciar, pausar e continuar
+- Reinício automático conforme contexto
+- Feedback sonoro (início, pausa e término)
+- Música ambiente opcional durante o foco
+
+### 🎯 Controle de contexto
+- Alteração dinâmica de:
+    - Imagem
+    - Título
+    - Tema visual
+- Ajuste automático da duração do timer
+- Interface adaptada para cada modo
+
+### 📝 Gerenciamento de tarefas
+- Criar novas tarefas
+- Editar tarefas existentes
+- Ativar uma tarefa para foco
+- Marcar tarefas como concluídas automaticamente ao finalizar o ciclo de foco
+- Remover tarefas concluídas
+- Limpar todas as tarefas
+- Scroll automático para novas tarefas
+
+### 💾 Persistência de dados
+- As tarefas são salvas automaticamente no navegador
+- Ao recarregar a página, o estado das tarefas é mantido
+
+---
+
+## 🧠 Conceitos e Arquitetura
+
+O projeto foi estruturado com foco em organização, isolamento de responsabilidades e previsibilidade de estado.
+
+### 🔹 Arquitetura Modular
+- ES Modules (import/export)
+- Separação clara entre domínios (pomodoro, tasks, global)
+- Comunicação controlada entre módulos
+- Organização escalável sem frameworks
+
+### 🔹 Gerenciamento de Estado
+- Controle centralizado do estado do timer
+- Gerenciamento da tarefa ativa
+- Interface reativa baseada em estado
+- Atualizações previsíveis da UI
+
+### 🔹 Manipulação de Dados
+- Persistência com LocalStorage
+- Serialização e Desserialização com JSON
+- Sincronização entre estado e armazenamento
+
+### 🔹 DOM & Eventos
+- Manipulação avançada do DOM
+- Eventos customizados
+- Controle de interface baseado em contexto
+
+---
+
+## 🛠 Tecnologias Utilizadas
+- ![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+- ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+- ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+- ![ES Modules](https://img.shields.io/badge/ES%20Modules-ES6+-blue)
+- ![Git](https://img.shields.io/badge/Git-F05032?logo=git&logoColor=white)
+- ![GitHub](https://img.shields.io/badge/GitHub-181717?logo=github&logoColor=white)
+- ![GitHub Pages](https://img.shields.io/badge/GitHub%20Pages-000000?logo=github&logoColor=white)
+
+---
+
+## 🚧 Desafios Técnicos
+Durante o desenvolvimento, alguns desafios enfrentados foram:
+
+- Sincronizar o estado do timer com a tarefa ativa
+- Evitar acoplamento excessivo entre módulos
+- Garantir persistência consistente no LocalStorage
+- Atualizar dinamicamente a interface com base no estado global
+- Manter escalabilidade sem uso de frameworks
+
+---
+
+## 📂 Estrutura do Projeto
+```text
+app
+ ├── mainPomodoro.js
+ ├── mainTasks.js
+ │
+ ├── global
+ │   ├── habilitarDesabilitarBtn.js
+ │   └── scrollToEnd.js
+ │
+ ├── pomodoro
+ │   ├── activeButton.js
+ │   ├── musicControl.js
+ │   │
+ │   ├── contexto
+ │   │   ├── alterarContexto.js
+ │   │   ├── atualizarInterface.js
+ │   │   └── contextoConfig.js
+ │   │
+ │   └── timer
+ │       ├── iniciarEPausar.js
+ │       ├── timerControl.js
+ │       ├── timerConfig.js
+ │       └── atualizarERedefinirBtnTimer.js
+ │
+ └── tasks
+     ├── criarElementoTarefa.js
+     ├── editarTarefa.js
+     ├── exibirTarefas.js
+     ├── ativarDesativarTarefas.js
+     ├── removerTarefas.js
+     ├── salvarNoLocalStorage.js
+     └── tarefasConfig.js
+```
+
+Essa organização permite:
+- Alta coesão por domínio
+- Baixo acoplamento entre módulos
+- Facilidade de manutenção
+- Escalabilidade futura
+
+---
+
+## ▶ Como Executar Localmente
 
 ### 1. Clone o repositório
 ```bash
 git clone https://github.com/mguilhermegomes/fokus-timer.git
 ```
 
-### 2. Acessar a pasta do projeto
+### 2. Acesse a pasta
 ```bash
 cd fokus-timer
 ```
 
-### 3. Abrir no navegador
-Abra o arquivo ``index.html`` ou utilize uma extensão como Live Server no VS Code.
+### 3. Execute
+Abra o arquivo ``index.html`` ou utilize a extensão **Live Server** no VS Code.
 
 > Nenhuma instalação adicional é necessária.
 
 ---
 
-## 📈 Aprendizados Durante o Desenvolvimento
-Esse projeto ajudou a consolidar conhecimentos importantes como:
+## 📚 Aprendizados
 
-- Organização de aplicações JavaScript sem frameworks
-- Estruturação modular de código
-- Controle de estado em aplicações front-end
-- Manipulação eficiente do DOM
-- Controle de eventos e timers assíncronos
-- Escrita de código pensando em manutenção e escalabilidade
+Este projeto reforçou e aprofundou conhecimentos em:
+
+- Estruturação de aplicações JavaScript
+- Arquitetura modular sem frameworks
+- Gerenciamento de estado
+- Fluxo de eventos em aplicações interativas
+- Persistência de dados no navegador
+- Organização escalável de código front-end
 
 ---
 
-## 👨‍💻 Desenvolvimento
+## 🔮 Melhorias Futuras
+Possíveis evoluções do projeto:
+- Estatísticas de produtividade
+- Histórico de ciclos concluídos
+- Dark mode persistente
+- Armazenamento em API externa
+- Testes automatizados
 
-Este projeto foi desenvolvido como parte da minha evolução prática em JavaScript moderno, com foco em boas práticas, clareza de código e construção de aplicações organizadas e escaláveis.
+---
 
-***Autor: Guilherme Gomes.***
+
+## 🎨 Créditos
+
+Layout e design fornecidos pela Alura para fins educacionais.  
+A implementação JavaScript foi desenvolvida por **Guilherme Gomes**.
+
+---
+
+## 📄 Licença
+
+O código JavaScript deste projeto está licenciado sob a MIT License.
+
+Os arquivos de HTML, CSS e os assets de design foram fornecidos pela Alura para fins educacionais e podem estar sujeitos aos termos da plataforma.
+
+## 👨‍💻 Autor
+
+**Guilherme Gomes**.  
+Desenvolvedor focado em JavaScript moderno e arquitetura front-end.
+
+🔗 LinkedIn: <https://www.linkedin.com/in/mguilherme-gomes/>  
+🔗 GitHub: <https://github.com/mguilhermegomes>

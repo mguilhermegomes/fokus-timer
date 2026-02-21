@@ -3,7 +3,7 @@ import { getTimerDuration, setTimerDuration, setTimerPaused } from "../timer/tim
 import atualizarInterface from "./atualizarInterface.js";
 import { redefinirTimer } from "../timer/timerControl.js";
 import { redefinirBtnTimer } from "../timer/atualizarERedefinirBtnTimer.js";
-import { desabilitarBotao } from "../habilitarDesabilitarBtn.js";
+import { desabilitarBotao } from "../../global/habilitarDesabilitarBtn.js";
 
 // Com base no contexto, modifica fundo, imagem e titulo. Redefine as configurações do timer
 function alterarContexto(btn, contexto, btnRestart) {

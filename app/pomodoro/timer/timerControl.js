@@ -1,5 +1,5 @@
 import { timerConfig, getTimerDuration, setTimerPaused, setTimerDuration, decrementTimer } from "./timerConfig.js";
-import { habilitarBotao, desabilitarBotao } from "../habilitarDesabilitarBtn.js";
+import { habilitarBotao, desabilitarBotao } from "../../global/habilitarDesabilitarBtn.js";
 import { redefinirBtnTimer } from "./atualizarERedefinirBtnTimer.js";
 import { pausarTimer } from "./iniciarEPausar.js";
 
@@ -13,6 +13,13 @@ export function contagemRegressiva() {
   if (getTimerDuration() <= 0) {
     audioTimerEsgotado.play();
     alert("Tempo finalizado");
+    
+    const focoAtivo = document.querySelector("html").getAttribute("data-contexto") === "foco";
+    if (focoAtivo) {
+      const eventoFocoFinalizado = new CustomEvent("FocoFinalizado");
+      document.dispatchEvent(eventoFocoFinalizado);
+    }
+
     pausarTimer();
     setTimerPaused();
     redefinirBtnTimer();
