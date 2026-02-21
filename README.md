@@ -236,6 +236,8 @@ O código JavaScript deste projeto está licenciado sob a MIT License.
 
 Os arquivos de HTML, CSS e os assets de design foram fornecidos pela Alura para fins educacionais e podem estar sujeitos aos termos da plataforma.
 
+---
+
 ## 👨‍💻 Autor
 
 **Guilherme Gomes**.  
