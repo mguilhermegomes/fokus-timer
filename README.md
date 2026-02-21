@@ -31,7 +31,7 @@ O projeto foi desenvolvido com foco em **estrutura escalável, separação de re
 Você pode visualizar e testar o projeto facilmente pelo link:
 
 - **👉 Deploy no GitHub Pages:**
-[Acesse o projeto](https://mguilhermegomes.github.io/fokus-timer/)
+<https://mguilhermegomes.github.io/fokus-timer/>  
 
 ---
 
